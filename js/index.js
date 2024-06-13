@@ -4,6 +4,9 @@ const foodSound = new Audio('food.mp3');
 const gameOverSound = new Audio('gameover.mp3');
 const moveSound = new Audio('move.mp3');
 const musicSound = new Audio('music.mp3');
+
+
+
 // const board = document.querySelector('.board');
 let speed = 5;
 let score = 0;
@@ -47,9 +50,10 @@ function gameEngine(){
         musicSound.pause();
         inputDir =  {x: 0, y: 0}; 
         alert("Game Over. Press any key to play again!");
+        
         score = 0; 
         snakeArr = [{x: 13, y: 15}];
-        musicSound.play();
+        
         scoreBox.innerHTML = "Score: " + score;
        
     }
@@ -118,7 +122,10 @@ else{
     hiscoreBox.innerHTML = "High Score: " + hiscore;
 }
 
-window.requestAnimationFrame(main);
+
+
+
+    window.requestAnimationFrame(main);
 window.addEventListener('keydown', e =>{
     inputDir = {x: 0, y: 1} // Start the game
     moveSound.play();
